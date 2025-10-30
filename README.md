@@ -19,12 +19,19 @@ My personal Hyprland configuration on Ubuntu.
 - **Terminal**: kitty configuration
 - **System**: Autostart, mimeapps, user dirs
 - **Lists**: Installed packages (apt, snap, flatpak)
+- **Audio**: PulseAudio configuration
+- **Git**: Git configuration
+- **Scripts**: Custom utility scripts
+- **Fonts**: Custom fonts collection
+- **Icons**: Icon themes
+- **Wallpapers**: Wallpaper collection
 
 ## Restore
 ```bash
 # Configs
 cp -r .config/* ~/.config/
-cp .zshrc .bashrc .profile .p10k.zsh ~/
+cp -r .local/* ~/.local/
+cp .zshrc .bashrc .profile .p10k.zsh .gitconfig ~/
 
 # Packages (review before installing)
 # cat lists/apt-manual.txt | xargs sudo apt install -y

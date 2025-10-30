@@ -1,0 +1,9 @@
+#!/bin/bash
+# Simple cliphist rofi launcher
+
+if pidof rofi > /dev/null; then
+    pkill rofi
+    exit
+fi
+
+cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy

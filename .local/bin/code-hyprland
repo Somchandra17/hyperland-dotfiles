@@ -1,0 +1,4 @@
+#!/bin/bash
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export WAYLAND_DISPLAY=wayland-1
+/snap/bin/code --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu-sandbox "$@"
