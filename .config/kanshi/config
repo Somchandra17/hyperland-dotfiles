@@ -1,0 +1,53 @@
+# HDMI outputs
+profile {
+    output HDMI-A-1 enable
+    output eDP-1 disable
+}
+
+profile {
+    output HDMI-A-2 enable
+    output eDP-1 disable
+}
+
+profile {
+    output HDMI-1 enable
+    output eDP-1 disable
+}
+
+# DisplayPort outputs
+profile {
+    output DP-1 enable
+    output eDP-1 disable
+}
+
+profile {
+    output DP-2 enable
+    output eDP-1 disable
+}
+
+profile {
+    output DP-3 enable
+    output eDP-1 disable
+}
+
+# USB-C/Thunderbolt outputs
+profile {
+    output DP-3 enable
+    output eDP-1 disable
+}
+
+profile {
+    output DP-4 enable
+    output eDP-1 disable
+}
+
+# VGA (older systems)
+profile {
+    output VGA-1 enable
+    output eDP-1 disable
+}
+
+# Fallback: laptop only (when no external monitor)
+profile {
+    output eDP-1 enable
+}

@@ -1,0 +1,11 @@
+Zen	app.zen_browser.zen	1.17.3b	stable	system
+FreeRDP Client	com.freerdp.FreeRDP	3.17.2	stable	system
+NormCap	com.github.dynobo.normcap	0.6.0	stable	system
+Super Productivity	com.super_productivity.SuperProductivity	16.1.0	stable	system
+Bottles	com.usebottles.bottles	51.26	stable	system
+Bruno	com.usebruno.Bruno	v2.13.2	stable	system
+Vesktop	dev.vencord.Vesktop	1.6.1	stable	system
+Sonic Pi	net.sonic_pi.SonicPi	4.6.0	stable	system
+Chromium Web Browser	org.chromium.Chromium	141.0.7390.122	stable	system
+Calendar	org.gnome.Calendar	49.0.1	stable	system
+Apostrophe	org.gnome.gitlab.somas.Apostrophe	3.4	stable	system
