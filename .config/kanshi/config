@@ -1,4 +1,16 @@
+# Fallback: laptop only (when no external monitor) - MUST be first
+profile {
+    output eDP-1 enable mode 1920x1080@60.02Hz scale 1.0
+}
+
 # HDMI outputs
+# Specific Samsung S27C36x monitor (supports 74.97Hz)
+profile office_trash_monitor {
+    output "Samsung Electric Company S27C36x H4PW300283" enable mode 1920x1080@74.97Hz scale 1.0
+    output eDP-1 disable
+}
+
+# Generic HDMI-A-1 fallback (for other monitors)
 profile {
     output HDMI-A-1 enable
     output eDP-1 disable
@@ -16,6 +28,16 @@ profile {
 
 # DisplayPort outputs
 profile {
+    output DP-2 enable mode 3440x1440@84.96Hz scale 1.0
+    output eDP-1 disable
+}
+
+profile {
+    output DP-1 enable mode 3440x1440@84.96Hz scale 1.0
+    output eDP-1 disable
+}
+
+profile {
     output DP-1 enable
     output eDP-1 disable
 }
@@ -32,11 +54,6 @@ profile {
 
 # USB-C/Thunderbolt outputs
 profile {
-    output DP-3 enable
-    output eDP-1 disable
-}
-
-profile {
     output DP-4 enable
     output eDP-1 disable
 }
@@ -45,9 +62,4 @@ profile {
 profile {
     output VGA-1 enable
     output eDP-1 disable
-}
-
-# Fallback: laptop only (when no external monitor)
-profile {
-    output eDP-1 enable
 }
