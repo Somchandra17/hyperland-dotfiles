@@ -27,6 +27,12 @@ profile {
 }
 
 # DisplayPort outputs
+# OnePlus X 27 monitor
+profile oneplus_x27 {
+    output "OPPO Digital, Inc. OnePlus X 27 C6230073C3TX0" enable mode 2560x1440@165.00Hz scale 1.0
+    output eDP-1 disable
+}
+
 profile {
     output DP-2 enable mode 3440x1440@84.96Hz scale 1.0
     output eDP-1 disable
