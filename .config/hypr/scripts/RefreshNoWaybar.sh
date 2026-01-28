@@ -1,6 +1,9 @@
 #!/bin/bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Scripts for refreshing ags, waybar, rofi, swaync, wallust
+
+# Modified version of Refresh.sh but waybar wont refresh
+# Used by automatic wallpaper change
+# Modified inorder to refresh rofi background, Wallust, SwayNC only
 
 SCRIPTSDIR=$HOME/.config/hypr/scripts
 UserScripts=$HOME/.config/hypr/UserScripts
@@ -15,15 +18,12 @@ file_exists() {
 }
 
 # Kill already running processes
-_ps=(waybar rofi swaync ags)
+_ps=(rofi)
 for _prs in "${_ps[@]}"; do
     if pidof "${_prs}" >/dev/null; then
         pkill "${_prs}"
     fi
 done
-
-# added since wallust sometimes not applying
-killall -SIGUSR2 waybar 
 
 # quit ags & relaunch ags
 #ags -q && ags &
@@ -31,18 +31,10 @@ killall -SIGUSR2 waybar
 # quit quickshell & relaunch quickshell
 #pkill qs && qs &
 
-# some process to kill
-for pid in $(pidof waybar rofi swaync ags swaybg); do
-    kill -SIGUSR1 "$pid"
-done
+# Wallust refresh (synchronous to ensure colors are ready)
+${SCRIPTSDIR}/WallustSwww.sh
+sleep 0.2
 
-#Restart waybar
-sleep 1
-waybar &
-
-# relaunch swaync
-sleep 0.5
-swaync > /dev/null 2>&1 &
 # reload swaync
 swaync-client --reload-config
 
@@ -51,5 +43,6 @@ sleep 1
 # if file_exists "${UserScripts}/RainbowBorders.sh"; then
 #     ${UserScripts}/RainbowBorders.sh &
 # fi
+
 
 exit 0
