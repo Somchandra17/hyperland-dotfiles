@@ -1,25 +1,24 @@
 # Hyprland Dotfiles
 
-My personal Hyprland configuration on Ubuntu.
+My personal Hyprland configuration.
+
+**System:** Acer Swift SF314-510G  
+**OS:** EndeavourOS (Linux 6.12.74-1-lts)  
+**WM:** Hyprland 0.54.0
 
 ## Included
 - **Hyprland**: Window manager config, keybinds, autostart
-- **Waybar**: Status bar with custom modules
-- **Rofi**: App launcher with themes
-- **Kanshi**: Display configuration
-- **SwayNC**: Notification daemon
-- **Cava**: Audio visualizer
-- **Wallust**: Wallpaper color theming
-- **AGS**: Additional widgets and overlays
-- **Btop**: System monitor
-- **Swappy**: Screenshot annotation
-- **Terminator**: Terminal emulator
+- **Quickshell**: Modern shell widgets and overlays (illogical-impulse config)
+- **Kitty**: Terminal emulator
 - **Fish**: Shell configuration
-- **Shell**: zsh/bash configs with p10k theme
-- **Terminal**: kitty configuration
-- **System**: Autostart, mimeapps, user dirs
-- **Lists**: Installed packages (apt, snap, flatpak)
-- **Audio**: PulseAudio configuration
+- **Zsh/Bash**: Shell configs with p10k theme
+- **Btop**: System monitor
+- **Brightnessctl**: Brightness control
+- **Playerctl**: Media control
+- **Wpctl**: Audio/volume control
+- **Hyprpicker**: Color picker
+- **Grim/Slurp**: Screenshot tools
+- **Tesseract**: OCR for text recognition
 - **Git**: Git configuration
 - **Scripts**: Custom utility scripts
 - **Fonts**: Custom fonts collection
