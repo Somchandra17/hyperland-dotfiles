@@ -263,6 +263,7 @@ alias serve='python3 -m http.server'
 # ── Custom ────────────────────────────────────────────────────────
 alias claer='clear'
 alias c='clear'
+alias r='ranger'
 alias mobsf='docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest'
 alias ghostyhelp='bat ~/terminal-cheatsheet.md'
 if [[ -d "$ANDROID_HOME" ]]; then
