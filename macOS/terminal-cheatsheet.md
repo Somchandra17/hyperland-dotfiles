@@ -4,6 +4,38 @@
 
 ---
 
+## Setup Overview
+
+| Component | Choice |
+|-----------|--------|
+| Terminals | Ghostty, Kitty |
+| Shell | ZSH |
+| Prompt | Starship |
+| Theme | TokyoNight Night |
+| Font | RobotoMono Nerd Font (15pt) |
+| Completions | fzf-tab + zsh-completions + brew completions |
+| History | Atuin (fuzzy, cross-session) |
+| Suggestions | zsh-autosuggestions (inline, fish-style) |
+| Highlighting | zsh-syntax-highlighting (TokyoNight palette) |
+| File listing | eza (icons, git status) |
+| File viewer | bat (syntax highlighting) |
+| Navigation | zoxide (smart cd) |
+| File search | fzf + fd |
+| Typo fixer | thefuck |
+
+### Quick Install (fresh Mac)
+
+```bash
+brew install starship zoxide eza bat fzf fd thefuck ripgrep \
+  zsh-autosuggestions zsh-syntax-highlighting zsh-completions \
+  atuin fastfetch btop tldr jq neovim
+brew install --cask font-roboto-mono-nerd-font ghostty kitty
+git clone --depth 1 https://github.com/Aloxaf/fzf-tab ~/.zsh/fzf-tab
+brew completions link
+```
+
+---
+
 ## Kitty Keybinds
 
 ### Tabs
@@ -174,7 +206,7 @@
 | `<` / `>` | Switch completion group |
 | `Esc` | Cancel completion |
 
-> Previews are automatic: directories show `eza` listing, files show `bat` syntax-highlighted content, git commands show diffs/logs, `kill` shows process info.
+> Previews are automatic: directories show `eza` listing, files show `bat` syntax-highlighted content, git commands show diffs/logs, `kill` shows process info, `brew install` shows package info.
 
 ---
 
@@ -201,7 +233,9 @@
 | `..` | `cd ..` |
 | `...` | `cd ../..` |
 | `....` | `cd ../../..` |
+| `.....` | `cd ../../../..` |
 | `c` | `clear` |
+| `claer` | `clear` (typo-proof) |
 | `d` | `dirs -v` (numbered dir stack) |
 | `1`–`9` | `cd +N` (jump to dir stack entry) |
 
@@ -212,6 +246,7 @@
 | `ls` | List with icons, dirs first |
 | `ll` | Long list, all files, git status |
 | `la` | List all including hidden |
+| `l` | List with classifiers |
 | `lt` | Long list, sorted by modified time |
 | `lsize` | Long list, sorted by size |
 | `tree` | Tree view (3 levels) |
@@ -235,6 +270,8 @@
 | `gco` | `git checkout` |
 | `gb` | `git branch` |
 | `gf` | `git fetch --all --prune` |
+| `grc` | `git rebase --continue` |
+| `gra` | `git rebase --abort` |
 | `gwip` | Stage all + commit "wip" |
 
 ### Docker
@@ -257,6 +294,15 @@
 | `kgs` | `kubectl get services` |
 | `kgd` | `kubectl get deployments` |
 
+### Python
+
+| Alias | Expands To |
+|-------|-----------|
+| `py` | `python3` |
+| `pip` | `python3 -m pip` |
+| `venv` | `python3 -m venv` |
+| `activate` | `source venv/bin/activate` |
+
 ### macOS
 
 | Alias | What it does |
@@ -271,16 +317,14 @@
 | `localip` | Show local IP |
 | `ports` | List listening ports |
 | `flushdns` | Flush DNS cache |
-| `brewup` | Update + upgrade + cleanup brew |
 
-### Python
+### Homebrew
 
-| Alias | Expands To |
-|-------|-----------|
-| `py` | `python3` |
-| `pip` | `python3 -m pip` |
-| `venv` | `python3 -m venv` |
-| `activate` | `source venv/bin/activate` |
+| Alias | What it does |
+|-------|-------------|
+| `brewup` | Update + upgrade + cleanup |
+| `brewlist` | List installed packages |
+| `brewinfo` | Show package info |
 
 ### Other
 
@@ -290,6 +334,15 @@
 | `reload` | Restart shell (`exec zsh`) |
 | `fuck` | Fix last mistyped command (thefuck) |
 | `rga` | ripgrep including hidden/ignored files |
+| `serve` | Start HTTP server (`python3 -m http.server`) |
+| `mobsf` | Run MobSF in Docker |
+
+### Android (if SDK installed)
+
+| Alias | What it does |
+|-------|-------------|
+| `emulateroot` | Pixel 6a API 29 (writable system) |
+| `emulateburp` | Pixel 4a API 33 (writable system) |
 
 ---
 
@@ -319,6 +372,7 @@
 | `~/.zshrc` | Shell configuration |
 | `~/.config/ghostty/config` | Ghostty terminal config |
 | `~/.config/kitty/kitty.conf` | Kitty terminal config |
+| `~/.config/kitty/tokyonight_night.conf` | Kitty color theme |
 | `~/.config/starship.toml` | Starship prompt theme |
 | `~/.config/fastfetch/config.jsonc` | Fastfetch system info |
 | `~/.config/atuin/config.toml` | Atuin history config |
