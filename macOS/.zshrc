@@ -37,7 +37,7 @@ unset _brew_cache _brew_bin
 # ── PATH ──────────────────────────────────────────────────────────
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export GOPATH="$HOME/go"
-export PATH=$PATH:$GOPATH/bin
+export PATH="$GOPATH/bin:$PATH"
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 export PATH="$HOME/.opencode/bin:$PATH"
 
@@ -396,8 +396,8 @@ if (( $+commands[zoxide] )); then
         zoxide init zsh >| "$_zoxide_cache"
     fi
     source "$_zoxide_cache"
-    unset _zoxide_cache
     alias cd='z'
+    unset _zoxide_cache
 fi
 
 # ── thefuck (command correction — lazy loaded) ───────────────────
